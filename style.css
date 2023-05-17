@@ -22,6 +22,15 @@
     text-decoration: none;
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+    background: var(--color-primary-light);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--color-primary);
+}
+
 html{
     font-size: 15px;
     scroll-behavior: smooth;
@@ -307,6 +316,11 @@ section.about .container .read-more:hover{
     text-decoration: underline;
 }
 
+/* Toggle read more content using JS */
+section.about .container .read-more-content.show-content{
+    display: block;
+}
+
 /* ----------------------Skills section------------------------ */
 section.skills .container{
     width: 50%;
@@ -334,6 +348,15 @@ section.skills .skill .head .left{
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+section.skills .skill .items{
+    display: none;
+}
+
+/* For javascript show/hide items */
+section.skills .container .skill .items.show-items{
+    display: block;
 }
 
 section.skills .skill .item{
@@ -665,12 +688,13 @@ footer .copyright{
     }
 
     /* ===================Nav Bar====================== */
-    nav{
-        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
-    }
-
     nav h3{
         margin-left: 1rem;
+    }
+
+    nav.show-box-shadow{
+        box-shadow: 0 1rem 1rem var(--color-primary-light);
+        border: none;
     }
 
     nav .container{
